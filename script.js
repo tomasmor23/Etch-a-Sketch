@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     makeGrid(16);
     document.querySelector("body").addEventListener("click", (e) => {
         if(e.target.tagName != "BUTTON") {
+            console.log(e.target.tagName)
             click = !click
         }
     });
@@ -37,7 +38,10 @@ function colorDiv() {
         if(color == `random`) {
             this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
         }
-        else{
+        else if (color == `white`) {
+            this.style.backgroundColor = "white";
+        }
+        else {
             this.style.backgroundColor = `black`;
         }
     }
